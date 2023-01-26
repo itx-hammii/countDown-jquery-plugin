@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #countDown {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        animation: countdown 2s linear infinite;
+      }
+
+      @keyframes countdown {
+        0% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(1.5);
+        }
+        50% {
+          transform: scale(1);
+        }
+      }
+    </style>
+    <title>CountDown Timer</title>
+  </head>
+  <body>
+    <h1 id="countDown"></h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="countDown.js"></script>
+    <script>
+      $("#countDown").countdownTimer({
+        time: 10,
+        callback: function () {
+          alert("Time's up!");
+        },
+      });
+    </script>
+  </body>
+</html>
